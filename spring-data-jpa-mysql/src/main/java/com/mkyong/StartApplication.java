@@ -8,7 +8,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.http.HttpHeaders;
+import reactor.core.publisher.Mono;
 
+import java.io.IOException;
 import java.util.List;
 
 @SpringBootApplication
@@ -20,11 +22,13 @@ public class StartApplication implements CommandLineRunner {
 //    private BookRepository repository;
 //    @Autowired
 //    private UserRepository userRepository;
-    @Autowired
-    private KienHangRepository kienHangRepository;
+//    @Autowired
+//    private KienHangRepository kienHangRepository;
 
     @Autowired
     private ApiService apiService;
+    @Autowired
+    private ApiCaller apiCaller;
 
     public static void main(String[] args) {
         SpringApplication.run(StartApplication.class, args);
@@ -42,8 +46,14 @@ public class StartApplication implements CommandLineRunner {
 //            String page = Integer.toString(i);
 //            apiService.callApiWithCookies(cookies,page);
 //        }
-
+        LoginRequest request = new LoginRequest("hieunguyen","123456");
         log.info("StartApplication...");
+        apiCaller.calAPIgetCookies();
+//        String login = "hieunguyen";
+//        String password = "123456";
+//        apiService.login("hieunguyen","123456");
+//        System.out.println("Cookies: " + cookies);
+
 
 //        kienHangRepository.findAll().forEach(x -> System.out.println(x));
 

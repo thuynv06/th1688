@@ -1,7 +1,5 @@
 com\mkyong\ApiController.class
 com\mkyong\Mvd.class
-com\mkyong\KienHangRepository.class
 com\mkyong\MvdRepository.class
 com\mkyong\StartApplication.class
-com\mkyong\KienhangEntity.class
 com\mkyong\ApiService.class
